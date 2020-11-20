@@ -1,0 +1,75 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 20a714017fecd4dcc24fa0bbcc9f2ac65c892ff0fe5959bdcd55ff1fa468571a
+
+name:           amazon
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/dreamsmasher/amazon#readme>
+homepage:       https://github.com/dreamsmasher/amazon#readme
+bug-reports:    https://github.com/dreamsmasher/amazon/issues
+author:         Norman Liu
+maintainer:     normanwuweiliu@gmail.com
+copyright:      Copright 2020 Norman Liu
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/dreamsmasher/amazon
+
+library
+  exposed-modules:
+      Lib
+      Req
+  other-modules:
+      Paths_amazon
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , discord-haskell
+    , emoji
+    , http-conduit
+  default-language: Haskell2010
+
+executable amazon-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_amazon
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , amazon
+    , base >=4.7 && <5
+    , discord-haskell
+    , emoji
+    , http-conduit
+  default-language: Haskell2010
+
+test-suite amazon-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_amazon
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson
+    , amazon
+    , base >=4.7 && <5
+    , discord-haskell
+    , emoji
+    , http-conduit
+  default-language: Haskell2010
